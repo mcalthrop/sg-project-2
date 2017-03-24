@@ -9,8 +9,7 @@ var Game = {
         function success(data) {
           var html = Game.view.index(data);
 
-          // set the HTML in the content div
-          $content.html(html);
+          $content.html(html); // set the HTML in the content div
         },
         function error() {
           // TODO: what will you do when an error occurs?
@@ -22,7 +21,7 @@ var Game = {
         }
       );
     },
-    show: function (game) {
+    show: function () {
       // TODO: implement
     },
     new: function () {
@@ -56,12 +55,16 @@ var Game = {
 
       return html;
     },
+    // generate the HTML to show an existing Game
+    show: function () {
+      // TODO: implement
+    },
     // generate the HTML to create a new Game
     new: function () {
       // TODO: implement
     },
     // generate the HTML to edit an existing Game
-    edit: function (game) {
+    edit: function () {
       // TODO: implement
     }
   },

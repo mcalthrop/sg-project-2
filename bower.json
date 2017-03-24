@@ -2,7 +2,7 @@
   "name": "sg-webdev4-project-2",
   "description": "Project 2 for Sparta Global Webdev 4",
   "main": "server.js",
-  "authors": [],
+  "authors": ["Matt Calthrop <mcalthrop@gmail.com>"],
   "license": "ISC",
   "ignore": [
     "**/.*",
