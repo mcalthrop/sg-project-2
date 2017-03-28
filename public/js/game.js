@@ -11,13 +11,11 @@ var Game = {
 
           $content.html(html); // set the HTML in the content div
         },
-        function error() {
-          // TODO: what will you do when an error occurs?
-          // Display a message somewhere?
-          // What parameters are passed to this anonymous function?
-          //   - read the jQuery docs
-          //   - use console.log() to confirm
-          // See: https://api.jquery.com/jQuery.ajax/
+        function error(err) {
+          // What does the `err` object look like? Try console.log()ing it.
+          // See also: https://api.jquery.com/jQuery.ajax/
+          console.log('Game.model.controller: err:', err);
+          $('#errors').html(err.responseJSON.message);
         }
       );
     },
