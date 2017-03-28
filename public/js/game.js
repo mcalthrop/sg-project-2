@@ -53,15 +53,15 @@ var Game = {
         <ul>
       `;
 
-      for(var i = 0; i < games.length ; i++) {
+      games.forEach(function (game) {
         html += `
           <li>
-            <a href="#" onclick="Game.controller.show('${games[i]._id}')">${games[i].title}</a>
-            <button onclick="Game.controller.edit('${games[i]._id}')" type="button">edit game</button>
-            <button onclick="Game.controller.destroy('${games[i]._id}')">delete game</button>
+            <a href="#" onclick="Game.controller.show('${game._id}')">${game.title}</a>
+            <button onclick="Game.controller.edit('${game._id}')" type="button">edit game</button>
+            <button onclick="Game.controller.destroy('${game._id}')">delete game</button>
           </li>
         `;
-      }
+      });
 
       html += `</ul>`;
 
