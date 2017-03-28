@@ -21,17 +21,29 @@ var Game = {
         }
       );
     },
-    show: function () {
+    show: function (gameId) {
       // TODO: implement
+      console.log('Game.controller.show: gameId:', gameId);
     },
     new: function () {
       // TODO: implement
+      console.log('Game.controller.new');
     },
-    edit: function () {
+    create: function (form) {
       // TODO: implement
+      console.log('Game.controller.create: form:', form);
     },
-    destroy: function () {
+    edit: function (gameId) {
       // TODO: implement
+      console.log('Game.controller.edit: gameId:', gameId);
+    },
+    update: function (form) {
+      // TODO: implement
+      console.log('Game.controller.update: form:', form);
+    },
+    destroy: function (gameId) {
+      // TODO: implement
+      console.log('Game.controller.destroy: gameId:', gameId);
     }
   },
   // the following object contains methods related to generating the View - ie, the HTML:
@@ -44,11 +56,13 @@ var Game = {
       `;
 
       for(var i = 0; i < games.length ; i++) {
-        // TODO: fill this in properly!
-        // For example:
-        //   - add buttons to view, edit & delete this game
-        //   - on each button, you can add an `onclick` attribute that calls the relevant method on `Game.controller`
-        html += `<li>${games[i].title}</li>`;
+        html += `
+          <li>
+            <a href="#" onclick="Game.controller.show('${games[i]._id}')">${games[i].title}</a>
+            <button onclick="Game.controller.edit('${games[i]._id}')" type="button">edit game</button>
+            <button onclick="Game.controller.destroy('${games[i]._id}')">delete game</button>
+          </li>
+        `;
       }
 
       html += `</ul>`;
@@ -56,16 +70,19 @@ var Game = {
       return html;
     },
     // generate the HTML to show an existing Game
-    show: function () {
+    show: function (gameId) {
       // TODO: implement
+      console.log('Game.view.show: gameId:', gameId);
     },
     // generate the HTML to create a new Game
     new: function () {
       // TODO: implement
+      console.log('Game.view.new');
     },
     // generate the HTML to edit an existing Game
-    edit: function () {
+    edit: function (gameId) {
       // TODO: implement
+      console.log('Game.view.edit: gameId:', gameId);
     }
   },
   // the following object contains model-related methods
